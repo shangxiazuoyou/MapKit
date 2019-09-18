@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MapKit.iml" filepath="$PROJECT_DIR$/MapKit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MapKit.iml" filepath="$PROJECT_DIR$/MapKit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/amap/amap.iml" filepath="$PROJECT_DIR$/amap/amap.iml" />
       <module fileurl="file://$PROJECT_DIR$/amap/amap.iml" filepath="$PROJECT_DIR$/amap/amap.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baidulbs/baidulbs.iml" filepath="$PROJECT_DIR$/baidulbs/baidulbs.iml" />
       <module fileurl="file://$PROJECT_DIR$/baidulbs/baidulbs.iml" filepath="$PROJECT_DIR$/baidulbs/baidulbs.iml" />
     </modules>
   </component>

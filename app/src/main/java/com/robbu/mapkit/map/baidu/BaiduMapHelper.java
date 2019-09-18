@@ -1,6 +1,5 @@
 package com.robbu.mapkit.map.baidu;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;

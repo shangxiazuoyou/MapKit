@@ -69,9 +69,9 @@ public class LocationActivity extends AppCompatActivity implements LocationServi
     @Override
     public void onLocationChanged(MapLocation location) {
         if (location != null) {
-//            tv_content.setText("经    度    : " + location.getLongitude() + "\n"
-//                    + "纬    度    : " + location.getLatitude() + "\n"
-//                    + "地    址    : " + location.getAddress());
+            tv_content.setText("经    度    : " + location.getLongitude() + "\n"
+                    + "纬    度    : " + location.getLatitude() + "\n"
+                    + "地    址    : " + location.getAddress());
             Log.e("地址", "经    度    : " + location.getLongitude() + "\n"
                     + "纬    度    : " + location.getLatitude() + "\n"
                     + "地    址    : " + location.getAddress());

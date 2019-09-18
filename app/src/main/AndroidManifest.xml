@@ -27,29 +27,29 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".LocationActivity"/>
+        <activity android:name=".LocationActivity" />
 
         <!-- 百度 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="B9ZZyEKjBTPmQOlu1WgLgFcGmE5ykB2h" />
+            android:value="" />
 
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote"/>
         <!-- 百度 -->
 
         <!-- 高德 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="c49936971622e4ebeda5cc9c018a9ef4" />
+            android:value="" />
         <!-- 高德 -->
     </application>
 

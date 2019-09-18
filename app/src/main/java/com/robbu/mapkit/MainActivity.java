@@ -1,5 +1,6 @@
 package com.robbu.mapkit;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +14,39 @@ import com.robbu.mapkit.map.bean.LatLng;
 import com.robbu.mapkit.map.common.ConfigConstants;
 import com.robbu.mapkit.map.common.MapHelper;
 import com.robbu.mapkit.map.common.MapView;
+import com.tbruyelle.rxpermissions2.Permission;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, MapHelper.MapLocationListenner {
 
+    private String TAG = "MainActivity";
+
     private MapHelper mapHelper;
+    private Disposable disposable;
+    private RxPermissions rxPermissions;
+
+    private void requestPermissions() {
+        rxPermissions = new RxPermissions(this);
+        disposable = rxPermissions.requestEach(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                .subscribe(new Consumer<Permission>() {
+                    @Override
+                    public void accept(Permission permission) throws Exception {
+                        if (permission.granted) {
+
+                        } else if (permission.shouldShowRequestPermissionRationale) {
+                            Log.e(TAG, "请授予权限");
+                        } else {
+                            Log.e(TAG, "请授予权限");
+                        }
+                    }
+                });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return false;
             }
         });
-
+        requestPermissions();
     }
 
     @Override
@@ -82,6 +111,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
         mapHelper.onDestroy();
+        if (disposable != null && !disposable.isDisposed()) {
+            disposable.dispose();
+        }
     }
 
     @Override
